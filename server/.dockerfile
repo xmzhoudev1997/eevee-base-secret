@@ -2,10 +2,12 @@ FROM node:18
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json .env.* pnpm-lock.yaml .npmrc ./
 
-RUN npm install --production
+COPY dist ./dist
 
-COPY dist ./
+RUN npm install pnpm -g
+
+RUN pnpm i
 
 CMD ["npm", "run", "start:prod"]
