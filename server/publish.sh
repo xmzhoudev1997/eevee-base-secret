@@ -5,7 +5,7 @@ IMAGE_NAME="eevee-user-server"
 CONTAINER_NAME="eevee-user-server"
 
 # 构建镜像
-docker build -t $IMAGE_NAME .
+docker buildx build -t $IMAGE_NAME .
 
 # 停止并删除所有正在运行的容器
 docker stop $(docker ps -aq --filter name=$CONTAINER_NAME)
