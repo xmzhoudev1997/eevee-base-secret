@@ -15,4 +15,8 @@ export class BaseToolMicroController {
   ids(count: number) {
     return this.service.getIds(count || 0);
   }
+  @MessagePattern('getLocales')
+  locales() {
+    return this.service.getLocales();
+  }
 }

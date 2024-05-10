@@ -1,4 +1,5 @@
 import {  Injectable } from '@nestjs/common';
+import { LOCALE_COMM } from './class';
 
 let time = 0;
 let count = 0;
@@ -20,5 +21,30 @@ export class BaseToolService {
   }
   getIds = async (count: number): Promise<string[]> => {
     return await Promise.all(Array(count).fill('').map(() => this.getId()));
+  }
+
+  getLocales = async (): Promise<LOCALE_COMM[]> => {
+    return [
+      {
+        code: 'zh-CN',
+        desc: '中文',
+        icon: '🇨🇳',
+      },
+      {
+        code: 'en-US',
+        desc: '英文',
+        icon: '🇺🇸',
+      },
+      {
+        code: 'ja-JP',
+        desc: '日文',
+        icon: '🇯🇵',
+      },
+      {
+        code: 'ko-KR',
+        desc: '韩文',
+        icon: '🇰🇷',
+      },
+    ];
   }
 }

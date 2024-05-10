@@ -8,3 +8,12 @@ export class IDS_DTO {
   @ApiProperty()
   count: string;
 }
+
+export class LOCALE_COMM {
+  @ApiProperty()
+  code: string;
+  @ApiProperty()
+  icon: string;
+  @ApiProperty()
+  desc: string;
+}
